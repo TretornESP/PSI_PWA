@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Artistas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" sizes="192x192" href="https://material.io/static/images/simple-lp/favicons/components-192x192.png">
+  <link rel="shortcut icon" href="https://material.io/static/images/simple-lp/favicons/components-72x72.png">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="style-webapp.css">
+
+  <script src="site.js"></script>
+
+</head>
+<body>
+<div class="header">
+
+  <!-- three dot menu -->
+  <div class="dropdown">
+      <!-- three dots -->
+      <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+          <li></li>
+          <li></li>
+          <li></li>
+      </ul>
+      <!-- menu -->
+      <div id="myDropdown" class="dropdown-content">
+           <input type="checkbox" id="show_id" name="show" value="showid" onclick="toggleId()" checked>
+           <label for="show_id"> Mostrar id del artista</label><br>
+      </div>
+  </div>
+</div>
+<div class="content">
+  <nav>
+      <ul id="datatab">
+      </ul>
+  </nav>
+</div>
+</body>
+</html>
