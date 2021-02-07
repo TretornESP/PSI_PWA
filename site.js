@@ -84,7 +84,7 @@
           if (window.localStorage.getItem('show_id') === "0") {
             document.getElementById("show_id").checked = false;
             console.log("unchecking");
-            toggleId();
+            document.getElementsByClassName("datatab").style.visibility = "collapsed";
           }
           ffetchQuery();
         } else {
