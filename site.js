@@ -1,5 +1,5 @@
 
-      const url = 'http://musicbrainz.org/ws/2/artist/?query=artist:equilibrium&fmt=json';
+      const url = 'https://musicbrainz.org/ws/2/artist/?query=artist:equilibrium&fmt=json';
       var online = true;
 
       function createNode(element) {
