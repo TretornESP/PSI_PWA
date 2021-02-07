@@ -51,7 +51,7 @@
               let name = createNode('span');
               id.innerHTML = `${artist.id}`;
               id.classList.add("id");
-              if (window.localStorage.getItem('show_id') === "1") {
+              if (window.localStorage.getItem('show_id') === "0") {
                 id.style.visibility = "collapse";
               }
               name.innerHTML = `${artist.name}`;
