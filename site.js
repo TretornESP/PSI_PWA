@@ -81,7 +81,7 @@
         console.log("CUAK");
         if (online) {
           console.log(window.localStorage.getItem('show_id'));
-          if (window.localStorage.getItem('show_id') === '0') {
+          if (window.localStorage.getItem('show_id') === "0") {
             document.getElementById("show_id").checked = false;
             console.log("unchecking");
             toggleId();
