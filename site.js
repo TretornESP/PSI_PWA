@@ -31,7 +31,7 @@
         } else {
           console.log("hiding");
           visib = "collapse";
-          window.localStorage.setItem('show_id', '0');
+          window.localStorage.setItem('show_id',  '0');
         }
         for (var i = 0; i < divsToHide.length; i++) {
           divsToHide[i].style.visibility = visib;
@@ -51,6 +51,9 @@
               let name = createNode('span');
               id.innerHTML = `${artist.id}`;
               id.classList.add("id");
+              if (window.localStorage.getItem('show_id') === "1") {
+                id.style.visibility = "collapse";
+              }
               name.innerHTML = `${artist.name}`;
               append(li, id);
               append(li, name);
