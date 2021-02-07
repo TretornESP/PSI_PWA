@@ -21,15 +21,21 @@
           document.getElementById("myDropdown").classList.toggle("show");
       }
 
-      function swap() {
-
-        if (window.localStorage.getItem('show_id') === "visible") {
-          window.localStorage.setItem('show_id', 'collapse');
+      function toggleId() {
+        var divsToHide = document.getElementsByClassName("id");
+        var visib;
+        if (document.getElementById("show_id").checked) {
+          console.log("Showing");
+          visib = "visible";
+          window.localStorage.setItem('show_id', '1');
         } else {
-          window.localStorage.setItem('show_id', 'visible');
+          console.log("hiding");
+          visib = "collapse";
+          window.localStorage.setItem('show_id', '0');
         }
-
-        document.getElementById("datatab").style.visibility = window.localStorage.getItem('show_id');
+        for (var i = 0; i < divsToHide.length; i++) {
+          divsToHide[i].style.visibility = visib;
+        }
       }
 
       function ffetchQuery() {
@@ -76,9 +82,12 @@
       window.addEventListener('load', function () {
         console.log("CUAK");
         if (online) {
-          document.getElementById("datatab").style.visibility = window.localStorage.getItem('show_id');
-          document.getElementById("show_id").checked = (document.getElementById("datatab").style.visibility === "checked");
-          
+          console.log(window.localStorage.getItem('show_id'));
+          if (window.localStorage.getItem('show_id') === "0") {
+            document.getElementById("show_id").checked = false;
+            console.log("unchecking");
+            toggleId();
+          }
           ffetchQuery();
         } else {
           console.log("OFFLINE");
