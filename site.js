@@ -25,9 +25,11 @@
         var divsToHide = document.getElementsByClassName("id");
         var visib;
         if (document.getElementById("show_id").checked) {
+          console.log("Showing");
           visib = "visible";
           window.localStorage.setItem('show_id', '1');
         } else {
+          console.log("hiding");
           visib = "collapse";
           window.localStorage.setItem('show_id', '0');
         }
