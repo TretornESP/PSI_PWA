@@ -26,10 +26,10 @@
         var visib;
         if (document.getElementById("show_id").checked) {
           visib = "visible";
-          saveIndexedDB(0, 1);
+          window.localStorage.setItem('show_id', '1');
         } else {
           visib = "collapse";
-          saveIndexedDB(0, 0);
+          window.localStorage.setItem('show_id', '0');
         }
         for (var i = 0; i < divsToHide.length; i++) {
           divsToHide[i].style.visibility = visib;
@@ -79,7 +79,9 @@
 
       window.addEventListener('load', function () {
         if (online) {
-          loadIndexedDB(0, checkermod);
+          if (window.localStorage.getItem('show_id') === '0') {
+            toggleId();
+          }
           ffetchQuery();
         } else {
           console.log("OFFLINE");
