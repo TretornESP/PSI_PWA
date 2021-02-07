@@ -26,8 +26,10 @@
         var visib;
         if (document.getElementById("show_id").checked) {
           visib = "visible";
+          saveIndexedDB(0, 1);
         } else {
           visib = "collapse";
+          saveIndexedDB(0, 0);
         }
         for (var i = 0; i < divsToHide.length; i++) {
           divsToHide[i].style.visibility = visib;
@@ -73,12 +75,14 @@
 
       window.addEventListener('load', function () {
         if (online) {
-          if(!!localStorage.getItem('show_od')) {
-            toggleId();
-          }
+          loadIndexedDB(0, checkermod);
           ffetchQuery();
         } else {
           console.log("OFFLINE");
           //Cache thinge
         }
       })
+
+      fuction checkermod(data) {
+        document.getElementById("show_id").checked = data;
+      }
