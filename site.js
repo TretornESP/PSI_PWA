@@ -22,7 +22,7 @@
       }
 
       function toggleId() {
-        var divsToHide = document.getElementsByClassName("id");
+        var divsToHide = document.getElementsByClassName("datatab");
         var visib;
         if (document.getElementById("show_id").checked) {
           console.log("Showing");
@@ -33,9 +33,7 @@
           visib = "collapse";
           window.localStorage.setItem('show_id', '0');
         }
-        for (var i = 0; i < divsToHide.length; i++) {
-          divsToHide[i].style.visibility = visib;
-        }
+        divsToHide.style.visibility = visib;
       }
 
       function ffetchQuery() {
