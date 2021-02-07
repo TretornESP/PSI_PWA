@@ -59,6 +59,10 @@
         });
       }
 
+      function checkermod(data) {
+        document.getElementById("show_id").checked = data;
+      }
+
       // Close the dropdown if the user clicks outside of it
       window.onclick = function(event) {
           if (!event.target.matches('.dropbtn')) {
@@ -81,8 +85,4 @@
           console.log("OFFLINE");
           //Cache thinge
         }
-      })
-
-      fuction checkermod(data) {
-        document.getElementById("show_id").checked = data;
-      }
+      });
