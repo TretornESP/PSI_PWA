@@ -73,6 +73,9 @@
 
       window.addEventListener('load', function () {
         if (online) {
+          if(!!localStorage.getItem('show_od')) {
+            toggleId();
+          }
           ffetchQuery();
         } else {
           console.log("OFFLINE");
