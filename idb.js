@@ -9,6 +9,7 @@ function openIndexedDB (fileindex) {
     db.result = openDB.result;
     db.store = db.result.createObjectStore("MyObjectStore", {keyPath: "id"});
     if (fileindex) db.index = db.store.createIndex("NameIndex", fileindex);
+    saveIndexedDB(0, 1);
   };
 
   return openDB;
