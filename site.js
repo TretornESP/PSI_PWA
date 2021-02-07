@@ -81,6 +81,7 @@
         if (online) {
           if (window.localStorage.getItem('show_id') === '0') {
             toggleId();
+            console.log(window.localStorage.getItem('show_id'));
           }
           ffetchQuery();
         } else {
